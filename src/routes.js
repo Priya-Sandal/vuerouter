@@ -25,7 +25,7 @@ const routes = [
         name: 'JobDetails',
         path: '/jobs/:id',
         component: JobDetails,
-        props: true,
+    
     },
     {
         name: 'NotFound',

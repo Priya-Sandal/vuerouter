@@ -8,20 +8,18 @@
 <script>
 import {
     jobs
-} from './jobs';
+} from './jobs.vue';
 export default {
-    name: 'JobDetails',
-    props: {
-        id: String
-    },
+    name: 'jobs',
     data() {
-        return {
-            details: "",
-        }
-    },
-    mounted() {
-        this.details = jobs.filter(job => job.id === parseInt(this.id))[0].details;
+        // return{jobs:this.$route.params.id}
+        this.details = jobs.filter(job => job.id === parseInt(this.$route.paramsid))[0].details;    
+        
     }
+//  mounted() {
+//         this.details = jobs.filter(job => job.id === parseInt(this.id))[0].details;
+//      }
+   
 }
 </script>
     

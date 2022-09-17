@@ -1,10 +1,14 @@
 
 <template>
+    <div>
     <h1>Jobs</h1>
-    <div v-for="(job,index) in jobs" class="job" :key="index">
+     <div v-for="(job,index) in jobs" class="job" :key="index">
         <router-link :to="{name:'JobDetails',params: {id:job.id}}" class="JobDetail">{{job.title}}
         </router-link>
-    </div>
+    </div> 
+
+
+</div>
 </template>
 <script>
 import { jobs } from './jobs';
