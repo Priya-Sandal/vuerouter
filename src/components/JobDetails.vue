@@ -1,25 +1,35 @@
 <template>
     <h1>JobDetails</h1>
     <h2>Job id : {{id}}</h2>
-    <h2>DETAILS</h2>
+
     <h3>{{details}}</h3>
 </template>
     
 <script>
+// import { onMounted } from 'vue';
 import {
     jobs
-} from './jobs.vue';
+}
+    from './jobs.js';
 export default {
-    name: 'jobs',
+    name: 'JobDetails',
     data() {
-        // return{jobs:this.$route.params.id}
-        this.details = jobs.filter(job => job.id === parseInt(this.$route.paramsid))[0].details;    
-        
+        // console.log(this.route.params)
+        return {
+
+            details: '',
+            id: this.$route.params.id,
+            // details:this.$route.params.details
+        }
+
+
+
+    },
+    mounted() {
+        this.details = jobs.filter(job => job.id === parseInt(this.$route.params.id))[0].details;
+
     }
-//  mounted() {
-//         this.details = jobs.filter(job => job.id === parseInt(this.id))[0].details;
-//      }
-   
+
 }
 </script>
     
